@@ -1,0 +1,97 @@
+#include "stdafx.h"
+#include <iostream>
+#define max 20
+
+using namespace std;
+
+class Stack
+{
+private:
+	int arreglo[max];
+	int top;
+public:
+	Stack()
+	{
+		top=-1;
+	}
+	bool empty();
+	bool full();
+	bool push(int x);
+	bool pop();
+	bool print();
+};
+
+bool Stack::empty()
+{
+	if(top == -1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool Stack::full()
+{
+	if(top >= max)
+	{
+		return true;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool Stack::push(int x)
+{
+	if(top == max)
+	{
+		cout<<"It cannot be added, the stack is full.";
+		return false;
+	}
+	else
+	{
+		top++;
+		arreglo[top] = x;
+		return true;
+	}
+}
+
+bool Stack::pop()
+{
+	if(top>-1)
+	{
+		top--;
+		return true;
+	}
+	else
+	{
+		exit(-1);
+	}
+}
+
+bool Stack::print()
+{
+	if(empty()==true)
+	{
+		cout<<"The stack no contains items.";
+		return false;
+	}
+	else
+	{
+		while(top != -1)
+		{
+			cout<<arreglo[top]<<endl;
+			top--;
+		}
+		return true;
+	}
+}
+
+int main()
+{
+	return 0;
+}
